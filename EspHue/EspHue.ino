@@ -19,14 +19,14 @@
 #define PIXEL_TYPE NEO_RGB + NEO_KHZ800
 
 // Wifi - uncomment or define in config.h
-//#define WLAN_SSID   "....."
-//#define WLAN_PASS   "....."
+//#define WLAN_SSID   "SSID"
+//#define WLAN_PASS   "password"
 
 // MQTT broker - uncomment or define in config.h
-//#define MQTT_SERVER      "....."
+//#define MQTT_SERVER      "192.168.1.5"
 //#define MQTT_PORT        1883   // use 8883 for SSL
-//#define MQTT_USERNAME    "...."
-//#define MQTT_PASSWORD    "...."
+//#define MQTT_USERNAME    "EspHue"
+//#define MQTT_PASSWORD    ""
 
 #define MAX_TOPIC_LENGTH 50
 #define MQTT_BASE_TOPIC "esphue"
@@ -153,6 +153,22 @@ void setColor(char *value)
   else if (strcmp(value, "blue") == 0) {
     Serial.println(F("Received command BLUE."));
     colorWipe(pixels.Color(0, 0, 255), 100); // Blue
+  }
+  else if (strcmp(value, "purple") == 0) {
+    Serial.println(F("Received command BLUE."));
+    colorWipe(pixels.Color(128, 0, 128), 100); // Blue
+  }
+  else if (strcmp(value, "magenta") == 0) {
+    Serial.println(F("Received command BLUE."));
+    colorWipe(pixels.Color(255, 0, 255), 100); // Blue
+  }
+  else if (strcmp(value, "yellow") == 0) {
+    Serial.println(F("Received command BLUE."));
+    colorWipe(pixels.Color(255, 255, 0), 100); // Blue
+  }
+  else if (strcmp(value, "cyan") == 0) {
+    Serial.println(F("Received command BLUE."));
+    colorWipe(pixels.Color(0, 255, 255), 100); // Blue
   }
   else if (strcmp(value, "off") == 0) {
     Serial.println(F("Received command OFF."));
